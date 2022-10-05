@@ -1,0 +1,85 @@
+<!doctype html>
+<html lang="es">
+
+<head>
+    <meta charset="utf-8">
+    <title>ejer3</title>
+    
+</head>
+
+<body>
+    <div class="container">
+        <div class="row">
+            <div class="col">
+                <form>
+                    <p>1. ¿En que año empezó la primera guerra mundial?  </p>
+                    
+                        Seleccione una:
+                        <ul>a.<input type="radio" name="pregunta1" id="p11"> 1914 </ul>
+                        <ul>b.<input type="radio" name="pregunta1" id="p12"> 1924</ul>
+                        <ul>c.<input type="radio" name="pregunta1" id="p13"> 1929</ul>
+                        <ul>d.<input type="radio" name="pregunta1" id="p14"> 1939</ul>
+                    
+                    <p>2.¿En que año fue la segunda guerra mundial? </p>
+                    
+                        Seleccione una:
+                        <ul>a.<input type="radio" name="pregunta2" id="p21"> 1914</ul>
+                        <ul>b.<input type="radio" name="pregunta2" id="p23"> 1924</ul>
+                        <ul>c.<input type="radio" name="pregunta2" id="p22"> 1929</ul>
+                        <ul>d.<input type="radio" name="pregunta2" id="p24"> 1939</ul>
+                    
+                    <p>3. ¿En que año fue la masacre en Munich?</p>
+                    
+                        Seleccione una:
+                        <ul>a.<input type="radio" name="pregunta3" id="p31"> 1986</ul>
+                        <ul>b.<input type="radio" name="pregunta3" id="p33"> 1972</ul>
+                        <ul>c.<input type="radio" name="pregunta3" id="p32"> 1956</ul>
+                        <ul>d.<input type="radio" name="pregunta3" id="p34"> 1999</ul>
+                    
+                    <p>4. ¿En que año fue el terromoto y tsunami en Japon?</p>
+                    
+                        Seleccione una:
+                        <ul>a.<input type="radio" name="pregunta4" id="p41"> 2011</ul>
+                        <ul>b.<input type="radio" name="pregunta4" id="p42"> 2006</ul>
+                        <ul>c.<input type="radio" name="pregunta4" id="p43"> 2003</ul>
+                        <ul>d.<input type="radio" name="pregunta4" id="p44"> 2016</ul>
+                    
+                    
+                    <hr />
+                    <button type="button"  onclick="resultado()">RESULTADO</button>
+                    <hr />
+                </form>
+            </div>
+        </div>
+    </div>
+
+    
+    
+    
+</body>
+<script>
+    function resultado() {
+  var p1, p2, p3, p4, nota;
+
+  // 1a pregunta
+  if (document.getElementById('p11').checked==true) {p1=1}
+  else {p1=0}
+  // 2a pregunta
+  if (document.getElementById('p24').checked==true) {p2=1}
+  else {p2=0}
+  // 3a pregunta
+  if (document.getElementById('p33').checked==true) {p3=1}
+  else {p3=0}
+  // 4a pregunta
+  if (document.getElementById('p41').checked==true) {p4=1}
+  else {p4=0}
+  
+
+  nota=p1+p2+p3+p4;
+  alert(" Numero de aciertos: " + nota );
+  window.location = 'ejer3.html'
+}
+
+</script>
+
+</html>

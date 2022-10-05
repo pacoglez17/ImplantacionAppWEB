@@ -1,0 +1,143 @@
+<!DOCTYPE html>
+<html lang="en">
+<head>
+    <meta charset="UTF-8">
+    <meta http-equiv="X-UA-Compatible" content="IE=edge">
+    <meta name="viewport" content="width=device-width, initial-scale=1.0">
+    <title>ejer4</title>
+    <style>
+        .solicitud{
+            color:blue;
+            background-color: orange;
+            font-size: 20px;
+        }
+        .div2{
+            color:black;
+            background-color: yellow;
+        }
+
+        button{
+            color:blue;
+            border-bottom: 1px;
+
+        }
+
+    </style>
+
+</head>
+<body>
+    <form onsubmit="return f_validar()">
+        <div class="solicitud">
+            Solicitud del informe de Vida Laboral
+
+        </div><br>
+        <div class="div2">
+
+		<label>Nombre: </label>
+		<input type="text" id="nombre" name="nombre" />
+		<br /><br />
+		
+		<label>Primer Apellido: </label>
+		<input type="text" id="apellidos" name="apellidos" />
+		<br /><br />
+		
+		<label>Segundo Apellido: </label>
+		<input type="text" id="apellidos" name="apellidos" />
+		<br /><br />
+		
+		<label>Correo Electrónico: </label>
+		<input type="text" id="correo" name="correo" />
+		<br /><br />
+		
+		<label>Numero de afiliado a la S.S: </label>
+		
+        <select name="provincia">
+            <option> A CORUÑA</option>
+            <option> Madrid</option>
+            <option> Alicante</option>
+        </select>
+
+        /
+        <input type="text" id="provincia" name="provincia" />
+
+        /
+        <input type="text" id="provincia" name="provincia" />
+		<br /><br />
+        
+        </div>
+    </form>
+    <input type="button" id="boton" value="ENVIAR" onclick="f_validar()">
+    <input type="button" value=" BORRAR"/>
+    
+</body>
+<script>
+    var dom_nombre = document.getElementById("nombre");
+	var dom_apellidos = document.getElementById("apellidos");
+	var dom_correo = document.getElementById("correo");
+	var dom_poblacion = document.getElementById("poblacion");
+	var dom_provincia = document.getElementById("provincia");
+
+
+
+
+    function f_validar()
+	{
+		var ok = false;
+		
+		if(dom_nombre.value.trim().length == 0)
+		{
+			alert("Nombre obligatorio.")
+			dom_nombre.focus();
+		}
+		 if(dom_nombre.value.trim().length < 2)
+		{
+			alert("Nombre, debe tener al menos 2 caracteres.")
+			dom_nombre.focus();
+		}
+		
+		 if(dom_apellidos.value.trim().length == 0)
+		{
+			alert("Apellidos obligatorios.")
+			dom_apellidos.focus();
+		}
+		 if(dom_apellidos.value.trim().length < 6)
+		{
+			dom_apellidos.focus();
+			alert("Apellidos, deben tener al menos 6 caracteres.")
+		}
+		
+		 if(dom_correo.value.trim().length == 0)
+		{
+			alert("correo obligatorio.")
+			dom_nombre.focus();
+		}
+		 if( dom_correo.value.indexOf("@") == -1)
+		{
+			alert("correo incorrecto, debe contener el caracter: @ ");
+			dom_correo.focus();
+		}
+		
+		 if(dom_poblacion.value.trim().length == 0)
+		{
+			alert("Poblacion obligatoria.")
+			dom_poblacion.focus();
+		}
+		 if(dom_provincia.value.trim().length == 0)
+		{
+			alert("Provincia obligatoria.")
+			dom_provincia.focus();
+		}
+
+		{
+			ok = true;
+		}
+		
+		return ok;
+	}
+
+
+
+
+
+</script>
+</html>

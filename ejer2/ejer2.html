@@ -1,0 +1,144 @@
+<!DOCTYPE html>
+<html lang="es">
+
+<head>
+    <meta charset="UTF-8" />
+    <meta http-equiv="X-UA-Compatible" content="IE=edge" />
+    <meta name="viewport" content="width=device-width, initial-scale=1.0" />
+    
+    
+    <title>ejer2</title>
+    <style>
+        #A{
+    margin: 12px;
+    border: 1px solid;
+    padding: 5px;
+}
+    </style>
+</head> 
+
+<body>
+    <form action="" name="form">
+        <div id="A">
+            Configurador del Coche
+
+        </div>
+        <div id="A">
+            Tipo de Motor
+            <br />
+            <input type="radio" name="Motor" id="moto1" value="1" onclick="A()" />Gasolina
+            <input type="radio" name="Motor" id="moto2" value="2" onclick="A()" />Diesel(+1500€)
+            <input type="radio" name="Motor" id="moto3" value="3" onclick="A()" />Hibrido(+3000€)
+        </div>
+        <div id="A">
+            Tipo de Puertas
+            <br />
+            <input type="radio" name="Puerta" id="3puertas" value="1" onclick="A()"/>3-Puertas(-2000€)(Solo Gasolina)
+            <input type="radio" name="Puerta" id="5puertas" value="2" onclick="A()"/>5-Puertas
+            <input type="radio" name="Puerta" id="familiar" value="3" onclick="A()"/>Familiar(+1500€)
+        </div>
+        <div id="A">
+            Tipo de Pintura
+            <br />
+            <input type="radio" name="Pintura" id="" value="1" onclick="A()"/>Rojo
+            <input type="radio" name="Pintura" id="" value="2" onclick="A()"/>Verde
+            <input type="radio" name="Pintura" id="" value="3" onclick="A()"/>Naranja
+            <input type="radio" name="Pintura" id="" value="4" onclick="A()"/>Blanco(-500€)
+            <input type="radio" name="Pintura" id="" value="5" onclick="A()"/>Negro(-600€)
+        </div>
+        <div id="A">
+            Seleccionar las que se deseen:
+            <br />
+            <input type="checkbox" name="met" id="met" />Metalizada(+750€)(Solo Rojo,Verde o Naranja)
+            <br />
+            <input type="checkbox" name="lls" id="lls" />Llantas(+200€)
+            <br />
+            <input type="checkbox" name="cli" id="cli" />Climatizador(+800€)
+            <br />
+            <input type="checkbox" name="gps" id="gps" />GPS(+340€)
+            <br />
+            <input type="checkbox" name="dvd" id="dvd" />DVD(+800€)(Solo Modelo Familiar)
+        </div>
+        <div id="A">
+            Total a Cobrar
+            <br />
+            <input type="submit" name="Calcular" id="" value="Calcular" onclick="B()"/>
+        </div>
+    </form>
+</body>
+    <script>
+        function A() {
+  t = document.form.Motor.value;
+  parseInt(t);
+  if (t == 1) {
+    document.getElementById("3puertas").disabled = false;
+  } else {
+    document.getElementById("3puertas").disabled = true;
+  }
+  g = document.form.Puerta.value;
+  parseInt(g);
+  if (g == 1 || g == 2) {
+    document.getElementById("dvd").disabled = true;
+  } else {
+    document.getElementById("dvd").disabled = false;
+  }
+  y = document.form.Pintura.value;
+  parseInt(y);
+  if (y == 4 || y == 5) {
+    document.getElementById("met").disabled = true;
+  } else {
+    document.getElementById("met").disabled = false;
+  }
+}
+function B() {
+  precio = 10000
+  t = document.form.Motor.value;
+  g = document.form.Puerta.value;
+  y = document.form.Pintura.value;
+  if (t == 1) {
+    precio = precio + 0
+  }
+  if (t == 2) {
+    precio = precio + 1500
+  }
+  if (t==3){
+    precio = precio +3000
+  }
+  if (g == 1) {
+    precio = precio - 2000
+  }
+  if (g == 2) {
+    precio = precio 
+  }
+  if (g == 3) {
+    precio = precio + 1500
+  }
+  if (y == 1 || y == 2 || y == 3) {
+    precio = precio 
+  }
+  if (y == 4) {
+    precio = precio - 500
+  }
+  if (y == 5) {
+    precio = precio - 600
+  }
+  if (document.getElementById("met").checked = true){
+    precio = precio + 750
+  }
+  if (document.getElementById("lls").checked = true){
+    precio = precio + 200
+  }
+  if (document.getElementById("cli").checked = true){
+    precio = precio + 800
+  }
+  if (document.getElementById("gps").checked = true){
+    precio = precio + 340
+  }
+  if (document.getElementById("dvd").checked = true){
+    precio = precio + 800
+  }
+  alert(precio)
+}
+    </script>
+
+</html>

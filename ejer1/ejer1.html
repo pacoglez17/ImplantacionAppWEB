@@ -1,0 +1,47 @@
+<!doctype html> <!--comentario-->
+<html lang=es>
+    <head>
+    <meta charset="utf-8">
+    <title> Ejercicio1</title> <!--titulo pestaña navegador --> 
+    <style>
+        #div1{
+            height: 220px;
+            width:220px;
+            background-color: red;
+        }
+    </style>
+    </head>
+    <body>
+        
+        <div id="div1" >
+            <font id="text2" color="" face="" >Este es el contenido del div1</font>
+        </div>
+        <input type="button" value="Cambiar Texto" id="cambtexto" onclick="texto()">
+        <br>
+        <input type="button" value="Cambiar color de fondo" id="cambcolor" onclick="color()">
+        <br>
+        <input type="button" value="Cambiar tipo y color de letra" id="cambtipo" onclick="tipo()">
+    
+     
+
+    </body>
+    <script>
+        function texto(){
+            var texto=prompt("Escribe el texto que quieras.")
+            document.getElementById("text2").innerHTML = texto
+            
+        }
+        function color(){
+            var color=prompt("Escribe el color en inglés.")
+            var cuadrado=document.getElementById("div1")
+            cuadrado.style.backgroundColor=color
+        }
+        function tipo(){
+            var tipo=prompt("Escribe el tipo de letra")
+            var colort=prompt("Escribe el color de letra en inglés")
+            document.getElementById("text2").face=tipo
+            document.getElementById("text2").color=colort
+        }
+    </script>
+      
+</html> 
